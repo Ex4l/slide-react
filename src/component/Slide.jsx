@@ -10,10 +10,10 @@ const style = {
   zDepth: 5
 };
 
-const PaperLeftNav = () => (
+const Slide = () => (
   <div>
     <Paper style={style} />
   </div>
 );
 
-export default PaperLeftNav;
+export default Slide;

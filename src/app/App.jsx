@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
-import MenuApp from './MenuApp';
-import LeftDrawer from './LeftDrawer';
 import './App.css';
+import MenuApp from '../component/MenuApp';
+import LeftDrawer from '../component/LeftDrawer';
+
 
 class App extends Component {
   render() {
