@@ -1,10 +1,12 @@
 import React from 'react';
+import {connect} from 'react-redux';
+import { addSlide } from '../actions/index'
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
 
-const AddButton = () => {
+let AddSlide = ({ dispatch }) => {
     const handleOnClick = () => {
-        console.log('prout');
+        dispatch(addSlide("pouet"));
     }
 
     return (
@@ -14,4 +16,6 @@ const AddButton = () => {
     );
 }
 
-export default AddButton;
+AddSlide = connect()(AddSlide);
+
+export default AddSlide;

@@ -5,8 +5,7 @@ const slides = (state = [], action) => {
           ...state,
           {
             id: action.id,
-            text: action.text,
-            color: "white"
+            text: action.text
           }
         ]
       default:

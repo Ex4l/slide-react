@@ -1,6 +1,6 @@
 import { createStore } from 'redux';
-import reducers from './reducers/reducers';
+import slides from './reducers/slides';
 
-let store = createStore(reducers);
+let store = createStore(slides);
 
 export default store;
