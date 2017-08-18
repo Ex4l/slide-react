@@ -1,14 +1,14 @@
 import React from 'react'
 import Slide from './Slide'
 
-let slides = [];
-
-const SlideList = () => (
+const SlideList = ({slides}) => (
   <ul>
-    {slides.map(slide => (
+    {/* {slides.map(slide => (
       <Slide key={slide.id} {...slide}/>
-    ))}
+    ))} */}
   </ul>
 )
+
+
 
 export default SlideList;
