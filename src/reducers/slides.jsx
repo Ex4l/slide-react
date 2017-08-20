@@ -4,8 +4,7 @@ const slides = (state = [], action) => {
         return [
           ...state,
           {
-            id: action.id,
-            text: action.text
+            id: action.id
           }
         ]
       default:
@@ -13,4 +12,4 @@ const slides = (state = [], action) => {
     }
   }
 
-  export default slides;
+ export default slides;

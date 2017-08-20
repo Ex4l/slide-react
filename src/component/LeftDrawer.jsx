@@ -1,7 +1,7 @@
 import React from 'react';
 import Drawer from 'material-ui/Drawer';
 import AddSlide from './AddSlide';
-import SlideList from './SlideList';
+import VisibleSlideList from './SlideList';
 
 const LeftDrawer = () =>
   (
@@ -10,7 +10,7 @@ const LeftDrawer = () =>
         <div style={{padding: 10}}>
           <AddSlide />
         </div>
-        <SlideList />
+        <VisibleSlideList />
       </Drawer>
     </div>
   );

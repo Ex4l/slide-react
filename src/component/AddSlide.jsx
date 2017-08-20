@@ -7,7 +7,7 @@ import slides from '../reducers/slides'
 
 let AddSlide = ({ dispatch }) => {
     const handleOnClick = () => {
-        dispatch(addSlide("pouet"));
+        dispatch(addSlide());
     }
 
     return (
@@ -26,6 +26,6 @@ const mapDispatchToProps = (dispatch, ownProps) => {
     }
   }
 
-AddSlide = connect()(AddSlide);
+AddSlide = connect(mapDispatchToProps)(AddSlide);
 
 export default AddSlide;
