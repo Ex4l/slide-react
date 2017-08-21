@@ -1,12 +1,12 @@
-const slides = (state = [], action) => {
+const slides = (state = {
+  slides:[]
+}, action) => {
     switch (action.type) {
       case 'add.new.slide':
-        return [
+        return {
           ...state,
-          {
-            id: action.id
-          }
-        ]
+          slides: [...state.slides, action.slide]
+        }
       default:
         return state
     }

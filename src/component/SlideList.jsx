@@ -1,7 +1,6 @@
 import React from 'react';
 import Slide from './Slide';
 import { connect } from 'react-redux';
-import PropTypes from 'prop-types'
 
 const SlideList = ({slides}) => (
   <ul>
@@ -12,15 +11,9 @@ const SlideList = ({slides}) => (
 )
 
 const mapStateToProps = state => {
-  console.log(state);
   return {
-    slides: state
+    slides: state.slides
   }
-}
-
-const getVisibleSlides = 
-(slides) => {
-  return slides;
 }
 
 const VisibleSlideList = connect(
