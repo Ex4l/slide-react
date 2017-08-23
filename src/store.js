@@ -1,6 +1,6 @@
 import { createStore } from 'redux';
-import slides from './reducers/slides';
+import slideReducer from './reducers/slideReducer';
 
-const store = createStore(slides, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
+const store = createStore(slideReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 export default store;

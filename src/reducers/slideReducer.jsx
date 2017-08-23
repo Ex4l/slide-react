@@ -1,8 +1,8 @@
-const slides = (state = {
+const slideReducer = (state = {
   slides:[]
 }, action) => {
     switch (action.type) {
-      case 'add.new.slide':
+      case 'SLIDE_ADD':
         return {
           ...state,
           slides: [...state.slides, action.slide]
@@ -12,4 +12,4 @@ const slides = (state = {
     }
   }
 
- export default slides;
+ export default slideReducer;
