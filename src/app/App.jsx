@@ -3,6 +3,7 @@ import MuiThemeProvider from 'material-ui/styles/MuiThemeProvider';
 import './App.css';
 import MenuApp from '../component/MenuApp';
 import LeftDrawer from '../component/LeftDrawer';
+import Toolbar from '../component/Toolbar'
 
 
 class App extends Component {
@@ -12,9 +13,8 @@ class App extends Component {
         <MuiThemeProvider>
           <div>
             <MenuApp />
-            <div>
-              <LeftDrawer />
-            </div>
+            <LeftDrawer />
+            <Toolbar />
           </div>
         </MuiThemeProvider>
       </div>
