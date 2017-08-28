@@ -4,7 +4,7 @@ export const addSlide = () => {
     type: 'SLIDE_ADD',
     slide: {
       id: nextSlideId++,
-      colour : 'white'
+      colour: 'white'
     }
   }
 }

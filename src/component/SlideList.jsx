@@ -11,13 +11,10 @@ const SlideList = ({slides}) => (
 )
 
 const mapStateToProps = state => {
+  console.log(state);
   return {
-    slides: state.slides
+    slides: state.slides.present.slides
   }
 }
 
-const VisibleSlideList = connect(
-  mapStateToProps
-)(SlideList);
-
-export default VisibleSlideList;
+export default connect(mapStateToProps)(SlideList);
