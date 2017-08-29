@@ -1,12 +1,11 @@
 import React from 'react';
 import IconMenu from 'material-ui/IconMenu';
 import IconButton from 'material-ui/IconButton';
-import FontIcon from 'material-ui/FontIcon';
 import ContentAddIcon from 'material-ui/svg-icons/content/add';
 import ContentUndoIcon from 'material-ui/svg-icons/content/undo';
 import ContentRedoIcon from 'material-ui/svg-icons/content/redo';
 import MenuItem from 'material-ui/MenuItem';
-import { Toolbar, ToolbarGroup, ToolbarSeparator, ToolbarTitle } from 'material-ui/Toolbar';
+import { Toolbar, ToolbarGroup } from 'material-ui/Toolbar';
 import { ActionCreators as UndoActionCreators } from 'redux-undo'
 import { connect } from 'react-redux'
 
@@ -29,7 +28,7 @@ const ToolbarComp = ({dispatch, canUndo, canRedo, onUndo, onRedo }) => {
           <ContentUndoIcon />
         </IconButton>
 
-        <IconButton touch={true} onClick={onRedo} disabled ={!canRedo}>
+        <IconButton touch={true} onClick={onRedo} disabled={!canRedo}>
           <ContentRedoIcon />
         </IconButton>
 
@@ -39,7 +38,6 @@ const ToolbarComp = ({dispatch, canUndo, canRedo, onUndo, onRedo }) => {
 }
 
 const mapStateToProps = state => {
-  console.log(state);
   return {
     canUndo: state.slides.past.length > 0,
     canRedo: state.slides.future.length > 0

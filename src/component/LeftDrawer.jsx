@@ -1,16 +1,17 @@
 import React from 'react';
 import Drawer from 'material-ui/Drawer';
 import AddSlide from './AddSlide';
-import VisibleSlideList from './SlideList';
+import SlideList from './SlideList';
+import Styles from '../styles';
 
 const LeftDrawer = () =>
   (
     <div>
-      <Drawer containerStyle={{height: 'calc(100% - 64px)', top: 64, width: '200px'}} >
-        <div style={{padding: 10}}>
+      <Drawer containerStyle={{ width: '200px' }}>
+        <div style={{ padding: 10 }}>
           <AddSlide />
         </div>
-        <VisibleSlideList />
+        <SlideList style={Styles().leftDrawerPaperstyle} />
       </Drawer>
     </div>
   );

@@ -2,16 +2,15 @@ import React from 'react';
 import Slide from './Slide';
 import { connect } from 'react-redux';
 
-const SlideList = ({slides}) => (
+const SlideList = ({slides, style}) => (
   <ul>
     {slides.map(slide => (
-      <Slide key={slide.id} {...slide}/>
+      <Slide style={style} key={slide.id} {...slide}/>
     ))}
   </ul>
 )
 
 const mapStateToProps = state => {
-  console.log(state);
   return {
     slides: state.slides.present.slides
   }

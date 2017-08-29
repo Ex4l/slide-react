@@ -7,6 +7,7 @@ const MenuApp = () => (
             title="SlideReact"
             iconClassNameRight="muidocs-icon-navigation-expand-more"
             showMenuIconButton={false}
+            style={{ paddingLeft: 230 }}
         />
     </div>
 )
