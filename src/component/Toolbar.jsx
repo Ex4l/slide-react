@@ -6,11 +6,8 @@ import ContentUndoIcon from 'material-ui/svg-icons/content/undo';
 import ContentRedoIcon from 'material-ui/svg-icons/content/redo';
 import MenuItem from 'material-ui/MenuItem';
 import { Toolbar, ToolbarGroup } from 'material-ui/Toolbar';
-import { ActionCreators as UndoActionCreators } from 'redux-undo'
-import { connect } from 'react-redux'
 
-const ToolbarComp = ({dispatch, canUndo, canRedo, onUndo, onRedo }) => {
-
+const ToolbarComp = ({ dispatch, canUndo, canRedo, onUndo, onRedo }) => {
   return (
     <Toolbar style={{ paddingLeft: 230 }}>
       <ToolbarGroup style={{ margin: 'auto' }}>
@@ -24,11 +21,12 @@ const ToolbarComp = ({dispatch, canUndo, canRedo, onUndo, onRedo }) => {
           <MenuItem primaryText="Add Slide" />
           <MenuItem primaryText="Add TextBox" />
         </IconMenu>
-        <IconButton touch={true} onClick={onUndo} disabled={!canUndo}>
+
+        <IconButton touch={true} onClick={() => onUndo()} disabled={!canUndo}>
           <ContentUndoIcon />
         </IconButton>
 
-        <IconButton touch={true} onClick={onRedo} disabled={!canRedo}>
+        <IconButton touch={true} onClick={() => onRedo()} disabled={!canRedo}>
           <ContentRedoIcon />
         </IconButton>
 
@@ -37,18 +35,4 @@ const ToolbarComp = ({dispatch, canUndo, canRedo, onUndo, onRedo }) => {
   );
 }
 
-const mapStateToProps = state => {
-  return {
-    canUndo: state.slides.past.length > 0,
-    canRedo: state.slides.future.length > 0
-  }
-}
-
-const mapDispatchToProps = dispatch => {
-  return {
-    onUndo: () => dispatch(UndoActionCreators.undo()),
-    onRedo: () => dispatch(UndoActionCreators.redo())
-  }
-}
-
-export default connect(mapStateToProps, mapDispatchToProps)(ToolbarComp);
+export default ToolbarComp;
