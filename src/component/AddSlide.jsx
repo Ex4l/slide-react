@@ -1,19 +1,18 @@
 import React from 'react';
-import { connect } from 'react-redux';
-import { addSlide } from '../actions/index';
 import FloatingActionButton from 'material-ui/FloatingActionButton';
 import ContentAdd from 'material-ui/svg-icons/content/add';
+import PropTypes from 'prop-types';
 
-let AddSlide = ({ dispatch }) => {
-    const handleOnClick = () => {
-        dispatch(addSlide());
-    }
-
+let AddSlide = ({ handleOnClick }) => {
     return (
-        <FloatingActionButton onClick={handleOnClick}>
+        <FloatingActionButton onClick={() => handleOnClick()}>
             <ContentAdd />
         </FloatingActionButton>
     );
 }
 
-export default connect()(AddSlide);
+AddSlide.propTypes = {
+    handleOnClick: PropTypes.func.isRequired
+}
+
+export default AddSlide;

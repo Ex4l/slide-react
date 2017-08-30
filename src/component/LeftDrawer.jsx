@@ -1,7 +1,7 @@
 import React from 'react';
 import Drawer from 'material-ui/Drawer';
-import AddSlide from './AddSlide';
-import SlideList from './SlideList';
+import AddSlide from '../containers/AddSlideContainer';
+import SlideList from '../containers/SlideListContainer';
 import Styles from '../styles';
 
 const LeftDrawer = () =>

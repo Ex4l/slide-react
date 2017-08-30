@@ -1,6 +1,6 @@
 import React from 'react';
 import Slide from './Slide';
-import { connect } from 'react-redux';
+import PropTypes from 'prop-types';
 
 const SlideList = ({slides, style}) => (
   <ul>
@@ -8,12 +8,11 @@ const SlideList = ({slides, style}) => (
       <Slide style={style} key={slide.id} {...slide}/>
     ))}
   </ul>
-)
+);
 
-const mapStateToProps = state => {
-  return {
-    slides: state.slides.present.slides
-  }
+SlideList.propTypes = {
+  slides: PropTypes.array.isRequired,
+  style: PropTypes.object.isRequired
 }
 
-export default connect(mapStateToProps)(SlideList);
+export default SlideList;

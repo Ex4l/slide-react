@@ -4,7 +4,7 @@ import './App.css';
 import MenuApp from '../component/MenuApp';
 import LeftDrawer from '../component/LeftDrawer';
 import Toolbar from '../containers/ToolbarContainer';
-import SlideList from '../component/SlideList';
+import SlideList from '../containers/SlideListContainer';
 import Styles from '../styles';
 
 class App extends Component {

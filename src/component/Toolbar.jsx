@@ -6,8 +6,9 @@ import ContentUndoIcon from 'material-ui/svg-icons/content/undo';
 import ContentRedoIcon from 'material-ui/svg-icons/content/redo';
 import MenuItem from 'material-ui/MenuItem';
 import { Toolbar, ToolbarGroup } from 'material-ui/Toolbar';
+import PropTypes from 'prop-types';
 
-const ToolbarComp = ({ dispatch, canUndo, canRedo, onUndo, onRedo }) => {
+const ToolbarComp = ({canUndo, canRedo, onUndo, onRedo }) => {
   return (
     <Toolbar style={{ paddingLeft: 230 }}>
       <ToolbarGroup style={{ margin: 'auto' }}>
@@ -33,6 +34,13 @@ const ToolbarComp = ({ dispatch, canUndo, canRedo, onUndo, onRedo }) => {
       </ToolbarGroup>
     </Toolbar>
   );
+}
+
+ToolbarComp.propTypes = {
+  canUndo : PropTypes.bool.isRequired,
+  canRedo : PropTypes.bool.isRequired,
+  onUndo : PropTypes.func.isRequired,
+  onRedo : PropTypes.func.isRequired
 }
 
 export default ToolbarComp;
